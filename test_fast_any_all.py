@@ -28,6 +28,6 @@ print "datasize="+str(datasize)
 print "iters="+str(iters)+"\n"
 
 for i in [test1, test2, test3, test4] :
-  print "\n"+str(i)+"\n---\n"
+  print "\n`"+str(i)+"`\n---\n"
   exec(setuptest+"print "+i)
   print "\n"+str(min(timeit.repeat(stmt=i, setup=setuptest, number=iters, repeat=runs)))+"\n\n"
