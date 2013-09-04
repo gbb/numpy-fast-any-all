@@ -13,13 +13,11 @@ Graeme B. Bell
 Usage
 ---
 
-`
-import fast_any_all as faa
+`import fast_any_all as faa`
 
-A = np.arange(5000)
+`A = np.arange(5000)`
 
-faa.any([A<3, A>5])
-`
+`faa.any([A<3, A>5])`
 
 `faa.any([list of boolean ndarrays])`, returns true where at least one element is true in an ndarray at that position.
 
