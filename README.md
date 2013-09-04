@@ -15,9 +15,9 @@ Usage
 
 import fast_any_all as faa
 
-faa.any([2d boolean array]), returns true where at least one element is true in axis 0
+faa.any([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
 
-faa.all([2d boolean array]), return true where all elements are true in axis 0
+faa.all([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
 
 
 Examples

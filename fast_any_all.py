@@ -6,14 +6,23 @@ import numpy as np
 # It takes lists of arrays (like np.any/all), but is fast like np.logical_or/and
 # It doesn't have the flexibility (in terms of axis choice) that is offered by np.any/all. 
 
+
 def all(inputs):
+  """faa.all([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
+  """
   return fast_logic(inputs,np.logical_and)
 
+
 def any(inputs):
+  """faa.any([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
+  """
   return fast_logic(inputs,np.logical_or)
 
+
 def fast_logic(inputs, logic_func): 
-  # No type-checking; depend on logical_or/and to check if the arrays are boolean or acceptable subtype
+  """ generic helper function for any() and all()
+      No direct type-checking; relies on numpy.boolean_or/and. 
+  "" 
 
   # Catch empty input, retain compatibility with np.any return value. 
   if len(inputs)==0: 
