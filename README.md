@@ -1,7 +1,7 @@
 fast_any_all
 ----
 
-Basically a ~14-17x faster implementation of a common use case for numpy.any() using numpy.logical_or(). Implementation is trivial. 
+Basically a ~14-17x faster implementation of a common use case for numpy.any/all() using numpy.logical_or/and(). Implementation is trivial. 
 
 It was written to improve performance in situations where you are overlaying identically shaped arrays and building boolean masks within the shaped array. 
 
