@@ -13,11 +13,15 @@ Graeme B. Bell
 Usage
 ---
 
+`
 import fast_any_all as faa
+A = np.arange(5000)
+faa.any([A<3, A>5])
+`
 
-faa.any([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
+`faa.any([list of boolean ndarrays])`, returns true where at least one element is true in an ndarray at that position.
 
-faa.all([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
+`faa.all([list of boolean ndarrays])`, returns true where at least one element is true in an ndarray at that position.
 
 
 Examples
@@ -33,7 +37,7 @@ Todo
 
 It's possible to make this implement more of the functionality of np.any by using reshape to alter which axis is used.
 
-But for now, it's super fast and syntactically nice for my own use case, which is what I care about.
+But for now, it's fast and has a nicer syntax than np.any() or np.logical_or() with my own use case, which is what I care about.
 
 Licenses
 --

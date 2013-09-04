@@ -7,22 +7,22 @@ import numpy as np
 # It doesn't have the flexibility (in terms of axis choice) that is offered by np.any/all. 
 
 
+def any(inputs):
+  """faa.any([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
+  """
+  return fast_logic(inputs,np.logical_or)
+
 def all(inputs):
   """faa.all([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
   """
   return fast_logic(inputs,np.logical_and)
 
 
-def any(inputs):
-  """faa.any([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
-  """
-  return fast_logic(inputs,np.logical_or)
-
 
 def fast_logic(inputs, logic_func): 
-  """ generic helper function for any() and all()
+  """ Generic helper function for any() and all()
       No direct type-checking; relies on numpy.boolean_or/and. 
-  "" 
+  """
 
   # Catch empty input, retain compatibility with np.any return value. 
   if len(inputs)==0: 
