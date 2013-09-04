@@ -7,7 +7,7 @@ import fast_any_all as faa
 #total 100 iterations, in batches of 10, taking the minimum as per: http://stackoverflow.com/a/8220943
 iters=10
 runs=10
-datasize=500000
+datasize=5000000
 
 setuptest='import numpy as np; import fast_any_all as faa; A = np.arange('+str(datasize)+'); B = np.arange('+str(datasize)+');'
 
@@ -28,8 +28,6 @@ print "datasize="+str(datasize)
 print "iters="+str(iters)+"\n"
 
 for i in [test1, test2, test3, test4] :
-  print 
-  print i
+  print "\n"+str(i)+"\n"
   exec(setuptest+"print "+i)
-  print min(timeit.repeat(stmt=i, setup=setuptest, number=iters, repeat=runs))
-  print
+  print "\n"+str(min(timeit.repeat(stmt=i, setup=setuptest, number=iters, repeat=runs)))+"\n\n"
