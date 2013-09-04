@@ -4,6 +4,11 @@ fast_any_all
 Basically a ~14-17x faster implementation of a common use case for numpy.any() using numpy.logical_or().
 Implementation is trivial. 
 
+Author
+---
+
+Graeme B. Bell
+
 Usage
 ---
 
@@ -24,3 +29,14 @@ Todo
 
 It's possible to make this implement more of the functionality of np.any by using reshape to alter which axis is used.
 But for now, it's super fast and syntactically nice for my own use case, which is what I care about.
+
+Licenses
+--
+
+GPL, MIT.
+
+
+Thanks & copyleft
+---
+
+Norsk Institutt for Skog og Landskap
