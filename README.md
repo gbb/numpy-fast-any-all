@@ -24,8 +24,11 @@ Examples
 ---
 
 `import fast_any_all as faa`
+
 `import numpy as np`
+
 `A = np.arange(5000)`
+
 `print faa.any([A<1, A>5])`
 
 
