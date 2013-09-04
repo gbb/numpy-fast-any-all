@@ -6,6 +6,9 @@ import numpy as np
 # It takes lists of arrays (like np.any/all), but is fast like np.logical_or/and
 # It doesn't have the flexibility (in terms of axis choice) that is offered by np.any/all. 
 
+"""This module offers a very fast alternative to numpy.any/all, for the use case of a list of bool ndarrays"""
+
+__version__="1.0.0"
 
 def any(inputs):
   """faa.any([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.

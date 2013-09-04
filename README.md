@@ -1,9 +1,18 @@
 fast_any_all
 ----
 
-Basically a ~14-17x faster implementation of a common use case for numpy.any() using numpy.logical_or().
+Basically a ~14-17x faster implementation of a common use case for numpy.any() using numpy.logical_or(). Implementation is trivial. 
 
-Implementation is trivial. 
+It was written to improve performance in situations where you are overlaying identically shaped arrays and building boolean masks within the shaped array. 
+
+For example, if you have 3 raster images, A, B and C, representing different aspects of some data, and in the same shape: 
+
+For each pixel location: 
+  if A[location] has the value 3,5, or 7, and B[location] has a value <100, and C[location] has a value 8, then output[location]=True
+
+This can be conveniently represented in terms of any() and all():   `all(any([A==3, A==5, A==7]), B<100, C==8)`
+
+The resulting masks can be combined with simpleselect to enable fast, complex raster-based decisions. This is rather useful for GIS work. 
 
 Author
 ---
@@ -32,7 +41,7 @@ Examples
 `print faa.any([A<1, A>5])`
 
 
-Please see BENCHMARK.md for example use.
+Please see [BENCHMARK.md](BENCHMARK.md) for example use.
 
 To run benchmarks: python test_fast_any_all.py 
 

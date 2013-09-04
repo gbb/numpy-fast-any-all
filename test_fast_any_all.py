@@ -1,5 +1,6 @@
 #/usr/bin/python -w
 
+import platform
 import numpy as np
 import timeit
 import fast_any_all as faa
@@ -23,8 +24,14 @@ test3='np.logical_or(np.logical_or(A>5, B<2), A>10)'
 # using faa any
 test4='faa.any([(A>5),(B<2),(A>10)])'
 
-print "Benchmark\n---\n\n"
-print "datasize="+str(datasize)
+
+print "Benchmark of fast_any_all\n---\n\n"
+print "System specification\n---\n\n"
+print "Fast_any_all version: "+str(faa.__version__)+"\n"
+print "Python version: "+platform.python_version()+"\n"
+print "Numpy version: "+str(np.version.version)+"\n"
+
+print "datasize="+str(datasize)+"\n"
 print "iters="+str(iters)+"\n"
 
 for i in [test1, test2, test3, test4] :

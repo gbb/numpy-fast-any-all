@@ -1,8 +1,19 @@
-Benchmark
+Benchmark of fast_any_all
 ---
 
 
+System specification
+---
+
+
+Fast_any_all version: 1.0.0
+
+Python version: 2.7.3
+
+Numpy version: 1.7.1
+
 datasize=5000000
+
 iters=10
 
 
@@ -11,7 +22,8 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-4.09605789185
+2.91592001915
+
 
 
 `((A>5)+(B<2)+(A>10))>0`
@@ -19,7 +31,7 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.377617120743
+0.26790189743
 
 
 
@@ -28,7 +40,7 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.287179946899
+0.202044963837
 
 
 
@@ -37,6 +49,6 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.285892963409
+0.202101945877
 
 
