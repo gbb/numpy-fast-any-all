@@ -15,10 +15,6 @@ Usage
 
 `import fast_any_all as faa`
 
-`A = np.arange(5000)`
-
-`faa.any([A<3, A>5])`
-
 `faa.any([list of boolean ndarrays])`, returns true where at least one element is true in an ndarray at that position.
 
 `faa.all([list of boolean ndarrays])`, returns true where at least one element is true in an ndarray at that position.
@@ -26,6 +22,12 @@ Usage
 
 Examples
 ---
+
+`import fast_any_all as faa`
+`import numpy as np`
+`A = np.arange(5000)`
+`print faa.any([A<1, A>5])`
+
 
 Please see BENCHMARK.md for example use.
 
