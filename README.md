@@ -3,6 +3,8 @@ fast_any_all
 
 Basically a ~14-17x faster implementation of a common use case for numpy.any/all() using numpy.logical_or/and(). Implementation is trivial. 
 
+It might be helpful to think of this as an extended version of logical_or/and.
+
 It was written to improve performance in situations where you are overlaying identically shaped arrays and building boolean masks within the shaped array. 
 
 For example, if you have 3 raster images, A, B and C, representing different aspects of some data, and in the same shape: 
@@ -57,6 +59,16 @@ Licenses
 --
 
 GPL, MIT.
+
+
+Notes
+---
+
+I have also tried:
+
+1. Using boolean addressing to overlay repeatedly. 15-20% slower than logical_or
+
+2. Using the ,out facility of logical_or. Appeared to have no effect on performance.
 
 
 Thanks & copyleft
