@@ -16,9 +16,9 @@ def any(inputs):
 def fast_logic(inputs, logic_func): 
   # No type-checking; use logical_or/and to check if the arrays are of the correct type (boolean or subtype)
 
-  # Check if it's size 1
-  if len(inputs)==1: 
-    return inputs
+  # Catch empty input, retain compatibility with np.any return value. 
+  if len(inputs)==0: 
+    return False
 
   output = inputs[0] # separate out first element
 
