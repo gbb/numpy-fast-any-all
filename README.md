@@ -15,7 +15,9 @@ Usage
 
 `
 import fast_any_all as faa
+
 A = np.arange(5000)
+
 faa.any([A<3, A>5])
 `
 
