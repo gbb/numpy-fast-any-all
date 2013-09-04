@@ -12,7 +12,7 @@ For each pixel location:
 
 This can be conveniently represented in terms of any() and all():   `all(any([A==3, A==5, A==7]), B<100, C==8)`
 
-The resulting masks can be combined with simpleselect to enable fast, complex raster-based decisions. This is rather useful for GIS work. 
+The resulting masks can be combined with [simpleselect](https://github.com/gbb/numpy-simple-select) to enable fast, complex raster-based decisions. This is rather useful for GIS work. 
 
 Author
 ---
