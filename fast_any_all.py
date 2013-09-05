@@ -37,3 +37,23 @@ def fast_logic(inputs, logic_func):
     output=logic_func(output,inputs[w])   # note that this loop doesn't run when len(inputs)=1.
   
   return output
+
+
+def reduce_any(inputs): 
+  return reduce(np.logical_or, inputs, False)
+
+
+def boolean_index_any(inputs): 
+    # Catch empty input, retain compatibility with np.any return value.
+  if len(inputs)==0:
+    return False
+
+  output = np.copy(inputs[0]) # clone first element
+
+  # overlay layers as masks using boolean indexing
+
+  for w in range(1,len(inputs)):   
+    output[inputs[w]]=True
+
+  return output
+
