@@ -22,7 +22,7 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-2.91592001915
+2.90197491646
 
 
 
@@ -31,7 +31,7 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.26790189743
+0.267004966736
 
 
 
@@ -40,15 +40,33 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.202044963837
+0.201917171478
 
 
 
-`faa.any([(A>5),(B<2),(A>10)])`
+`faa.any([A>5, B<2,A>10])`
 ---
 
 [ True  True False ...,  True  True  True]
 
-0.202101945877
+0.202533006668
+
+
+
+`faa.reduce_any([(A>5),(B<2),(A>10)])`
+---
+
+[ True  True False ...,  True  True  True]
+
+0.241019010544
+
+
+
+`faa.boolean_index_any([A>5, B<2,A>10])`
+---
+
+[ True  True False ...,  True  True  True]
+
+0.239975214005
 
 
