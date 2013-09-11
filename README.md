@@ -16,7 +16,7 @@ This can be conveniently represented in terms of any() and all():   `all(any([A=
 
 The resulting masks can be combined with [simpleselect](https://github.com/gbb/numpy-simple-select) to enable fast, complex raster-based decisions. This is rather useful for GIS work. 
 
-Please note that in the experimental numpy1.8 branch, numpy.any/all are much improved over 1.7, but are expected to be around 40-50% slower than fast_any_all.
+Please note that in the experimental numpy1.8 branch, numpy.any/all are much improved over 1.7, but judging from the approach taken, fast_any_all will still be about 2x as fast. 
 
 Performance has been tested with a range of alternative implementations and idiomatic approaches.
 
