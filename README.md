@@ -1,7 +1,7 @@
 fast_any_all
 ----
 
-Basically a ~14-17x faster implementation of a common use case for numpy.any/all() using numpy.logical_or/and(). Implementation is trivial. 
+Basically a 30x faster implementation of a common use case for numpy.any/all() using numpy.logical_or/and(). Implementation is trivial. 
 
 It might be helpful to think of this as an extended version of logical_or/and.
 
@@ -15,6 +15,10 @@ For each pixel location:
 This can be conveniently represented in terms of any() and all():   `all(any([A==3, A==5, A==7]), B<100, C==8)`
 
 The resulting masks can be combined with [simpleselect](https://github.com/gbb/numpy-simple-select) to enable fast, complex raster-based decisions. This is rather useful for GIS work. 
+
+Please note that in the experimental numpy1.8 branch, numpy.any/all are much improved over 1.7, but are expected to be around 40-50% slower than fast_any_all.
+
+Performance has been tested with a range of alternative implementations and idiomatic approaches.
 
 Author
 ---
@@ -70,6 +74,7 @@ I have also tried:
 
 2. Using the ,out facility of logical_or. Appeared to have no effect on performance.
 
+3. vstack and other idioms (via Julian Taylor)
 
 Thanks & copyleft
 ---
