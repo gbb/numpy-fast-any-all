@@ -17,12 +17,12 @@ datasize=5000000
 iters=10
 
 
-`np.any([A>5, B<2,A>10], 0)`
+`np.any(a[0], 0)`
 ---
 
 [ True  True False ...,  True  True  True]
 
-2.88760590553
+2.67618393898
 
 
 
@@ -31,7 +31,7 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.26745891571
+0.267272949219
 
 
 
@@ -40,34 +40,34 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.199987888336
+0.20156788826
 
 
 
-`faa.any_without_vstack([A>5, B<2,A>10])`
+`faa.any(a[1])`
 ---
 
 [ True  True False ...,  True  True  True]
 
-0.203147172928
+0.0790700912476
 
 
 
-`faa.reduce_any([(A>5),(B<2),(A>10)])`
+`faa.reduce_any(a[2])`
 ---
 
 [ True  True False ...,  True  True  True]
 
-0.243079185486
+0.118819952011
 
 
 
-`faa.boolean_index_any([A>5, B<2,A>10])`
+`faa.boolean_index_any(a[3])`
 ---
 
 [ True  True False ...,  True  True  True]
 
-0.237656116486
+0.115568161011
 
 
 
@@ -76,24 +76,24 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.244158983231
+0.244898796082
 
 
 
-`np.any(np.vstack(a),0)`
+`np.any(np.vstack(a[4]),0)`
 ---
 
 [ True  True False ...,  True  True  True]
 
-0.138797998428
+0.141221046448
 
 
 
-`faa.any(a)`
+`faa.any(np.vstack(a[5]))`
 ---
 
 [ True  True False ...,  True  True  True]
 
-0.0958449840546
+0.0991821289062
 
 
