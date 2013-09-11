@@ -22,7 +22,7 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-2.90197491646
+2.88760590553
 
 
 
@@ -31,7 +31,7 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.267004966736
+0.26745891571
 
 
 
@@ -40,16 +40,16 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.201917171478
+0.199987888336
 
 
 
-`faa.any([A>5, B<2,A>10])`
+`faa.any_without_vstack([A>5, B<2,A>10])`
 ---
 
 [ True  True False ...,  True  True  True]
 
-0.202533006668
+0.203147172928
 
 
 
@@ -58,7 +58,7 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.241019010544
+0.243079185486
 
 
 
@@ -67,6 +67,33 @@ iters=10
 
 [ True  True False ...,  True  True  True]
 
-0.239975214005
+0.237656116486
+
+
+
+`np.any(b, 0)`
+---
+
+[ True  True False ...,  True  True  True]
+
+0.244158983231
+
+
+
+`np.any(np.vstack(a),0)`
+---
+
+[ True  True False ...,  True  True  True]
+
+0.138797998428
+
+
+
+`faa.any(a)`
+---
+
+[ True  True False ...,  True  True  True]
+
+0.0958449840546
 
 

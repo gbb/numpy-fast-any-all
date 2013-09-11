@@ -13,14 +13,12 @@ __version__="1.0.0"
 def any(inputs):
   """faa.any([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
   """
-  return fast_logic(inputs,np.logical_or)
+  return fast_logic(np.vstack(inputs),np.logical_or)  
 
 def all(inputs):
   """faa.all([list of boolean ndarrays]), returns true where at least one element is true in an ndarray at that position.
   """
-  return fast_logic(inputs,np.logical_and)
-
-
+  return fast_logic(np.vstack(inputs),np.logical_and)  
 
 def fast_logic(inputs, logic_func): 
   """ Generic helper function for any() and all()
@@ -38,6 +36,12 @@ def fast_logic(inputs, logic_func):
   
   return output
 
+
+def any_without_vstack(inputs):
+  return fast_logic(inputs,np.logical_or)
+
+def all_without_vstack(inputs):
+  return fast_logic(inputs,np.logical_and)
 
 def reduce_any(inputs): 
   return reduce(np.logical_or, inputs, False)

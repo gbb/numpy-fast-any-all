@@ -24,7 +24,7 @@ test2='((A>5)+(B<2)+(A>10))>0'
 test3='np.logical_or(np.logical_or(A>5, B<2), A>10)'
 
 # using faa any
-test4='faa.any([A>5, B<2,A>10])'
+test4='faa.any_without_vstack([A>5, B<2,A>10])'
 
 # using reduce
 test5='faa.reduce_any([(A>5),(B<2),(A>10)])'
@@ -36,7 +36,10 @@ test6='faa.boolean_index_any([A>5, B<2,A>10])'
 test7='np.any(b, 0)'
 
 # using np.any() with the 'vstack' idiom (Julian Taylor)
-test8='np.any(vstack(a),0)'
+test8='np.any(np.vstack(a),0)'
+
+# using np.any() with the 'vstack' idiom (Julian Taylor)
+test9='faa.any(a)'
 
 print "Benchmark of fast_any_all\n---\n\n"
 print "System specification\n---\n\n"
@@ -47,7 +50,7 @@ print "Numpy version: "+str(np.version.version)+"\n"
 print "datasize="+str(datasize)+"\n"
 print "iters="+str(iters)+"\n"
 
-for i in [test1, test2, test3, test4, test5, test6] :
+for i in [test1, test2, test3, test4, test5, test6, test7, test8, test9] :
   print "\n`"+str(i)+"`\n---\n"
   exec(setuptest+"print "+i)
   print "\n"+str(min(timeit.repeat(stmt=i, setup=setuptest, number=iters, repeat=runs)))+"\n\n"
